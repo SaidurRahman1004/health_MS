@@ -1,0 +1,24 @@
+[
+    {
+        "hospital_id": "HOSP001",
+        "name_bangla": "ঢাকা মেডিকেল (Dhaka Medical)",
+        "location": "Dhaka",
+        "contact": "+8801300000000",
+        "services": [
+            "Emergency",
+            "Cardiology",
+            "Respiratory"
+        ]
+    },
+    {
+        "hospital_id": "HOSP002",
+        "name_bangla": "স্কয়ার হাসপাতাল (Square Hospital)",
+        "location": "Dhaka",
+        "contact": "+8801700000000",
+        "services": [
+            "Emergency",
+            "Gastroenterology",
+            "Dermatology"
+        ]
+    }
+]

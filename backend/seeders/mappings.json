@@ -1,0 +1,149 @@
+[
+    {
+        "symptom_id": "SYM001",
+        "category_id": "CAT010",
+        "advice_bangla": "জ্বর থাকলে শরীর বিশ্রাম করাও, পরিমিত পানি পান করো। ৩ দিনেও না নামলে ডাক্তার দেখাও।",
+        "risk_level": "Medium",
+        "recommended_doctor": "General Physician (সাধারণ ডাক্তার)"
+    },
+    {
+        "symptom_id": "SYM003",
+        "category_id": "CAT001",
+        "advice_bangla": "কাশি থাকলে গরম চা/গরম পানি এবং ধুলা-ময়লা এড়িয়ে চলো; দীর্ঘস্থায়ী হলে ফুসফুস বিশেষজ্ঞ দেখাও।",
+        "risk_level": "Low",
+        "recommended_doctor": "Pulmonologist (পালমোনোলজিস্ট)"
+    },
+    {
+        "symptom_id": "SYM004",
+        "category_id": "CAT001",
+        "advice_bangla": "শ্বাসকষ্ট হলে দ্রুত বিশ্রাম নাও; যদি শ্বাস নিতে বেশি কষ্ট হয় বা ব্লু লিপস হয় তাহলে জরুরি সেবা নাও।",
+        "risk_level": "High",
+        "recommended_doctor": "Pulmonologist (পালমোনোলজিস্ট) / Emergency"
+    },
+    {
+        "symptom_id": "SYM005",
+        "category_id": "CAT001",
+        "advice_bangla": "বুকে চাপ অনুভব করলে বিশ্রাম নাও এবং দ্রুত সহায়তা নেও। যদি তীব্র হয় তবে দ্রুত হাসপাতালে যাও।",
+        "risk_level": "High",
+        "recommended_doctor": "Pulmonologist (পালমোনোলজিস্ট) / Cardiologist (কার্ডিওলজিস্ট)"
+    },
+    {
+        "symptom_id": "SYM008",
+        "category_id": "CAT002",
+        "advice_bangla": "মাথা ব্যথা হলে অন্ধকারে বিশ্রাম নাও, প্রচুর পানি খাও; তীব্র বা জোরালো বমি/চলছেই থাকলে নিউরো স্পেশালিস্ট দেখাও।",
+        "risk_level": "Low",
+        "recommended_doctor": "Neurologist (নিউরোলজিস্ট)"
+    },
+    {
+        "symptom_id": "SYM009",
+        "category_id": "CAT002",
+        "advice_bangla": "হঠাৎ বা বারবার মাথা ঘোরা হলে বসে ক্ষণিক বিশ্রাম নাও; ঘরান পরিবর্তন করলে সতর্ক হও। অবস্থা খারাপ হলে চিকিৎসকের সাথে যোগাযোগ করো।",
+        "risk_level": "Medium",
+        "recommended_doctor": "Neurologist (নিউরোলজিস্ট)"
+    },
+    {
+        "symptom_id": "SYM013",
+        "category_id": "CAT003",
+        "advice_bangla": "পেট ব্যথা হলে হালকা পুষ্টিকর খাবার নাও এবং পর্যাপ্ত পানি নাও; তীব্র বা রক্তমিশ্রিত ব্যথা হলে ডাক্তার দেখাও।",
+        "risk_level": "Medium",
+        "recommended_doctor": "Gastroenterologist (গ্যাস্ট্রোএনটেরোলজিস্ট)"
+    },
+    {
+        "symptom_id": "SYM014",
+        "category_id": "CAT003",
+        "advice_bangla": "বমি থাকলে ছোট ছোট পরিমাণে পানি পান করো; কিছুক্ষণ পর হালকা স্বাদযুক্ত খাবার নাও। নিয়মিত হলে ডাক্তার দেখাও।",
+        "risk_level": "Low",
+        "recommended_doctor": "Gastroenterologist (গ্যাস্ট্রোএনটেরোলজিস্ট)"
+    },
+    {
+        "symptom_id": "SYM015",
+        "category_id": "CAT003",
+        "advice_bangla": "ডায়রিয়া হলেORS বা সমতুল্য ইলেকট্রোলাইট নিয়োগ করো; ২৪ ঘণ্টার বেশি হলে চিকিৎসা নাও।",
+        "risk_level": "Medium",
+        "recommended_doctor": "Gastroenterologist (গ্যাস্ট্রোএনটেরোলজিস্ট)"
+    },
+    {
+        "symptom_id": "SYM017",
+        "category_id": "CAT004",
+        "advice_bangla": "বুকে তীব্র ব্যথা হলে সতর্ক হও—এটি জরুরি সংকেত। দ্রুত নিকটস্থ হাসপাতাল/ইআর-এ যাও।",
+        "risk_level": "High",
+        "recommended_doctor": "Cardiologist (কার্ডিওলজিস্ট) / Emergency"
+    },
+    {
+        "symptom_id": "SYM018",
+        "category_id": "CAT004",
+        "advice_bangla": "হৃদস্পন্দন অনিয়মিত মনে হলে বিশ্রাম নাও এবং দ্রুত পরামর্শ নাও।",
+        "risk_level": "High",
+        "recommended_doctor": "Cardiologist (কার্ডিওলজিস্ট)"
+    },
+    {
+        "symptom_id": "SYM019",
+        "category_id": "CAT005",
+        "advice_bangla": "চুলকানি হলে ত্বককে পরিষ্কার রাখো; যদি চর্মে ফুসকুড়ি বা ছিদ্র দেখা যায় তবে ডার্মাটোলজিস্ট দেখাও।",
+        "risk_level": "Low",
+        "recommended_doctor": "Dermatologist (ডার্মাটোলজিস্ট)"
+    },
+    {
+        "symptom_id": "SYM020",
+        "category_id": "CAT005",
+        "advice_bangla": "র‍্যাশ দেখা গেলে অ্যালার্জি বা সংক্রমণের সম্ভাবনা থাকতে পারে; দ্রুত পরিবেশ পরিবর্তন করে ত্বক পরিষ্কার রাখো।",
+        "risk_level": "Medium",
+        "recommended_doctor": "Dermatologist (ডার্মাটোলজিস্ট)"
+    },
+    {
+        "symptom_id": "SYM022",
+        "category_id": "CAT006",
+        "advice_bangla": "চোখ লাল থাকলে বিশ্রাম নাও ও চোখ ধুলো-ময়লা থেকে দূরে রাখো; ব্যথা থাকলে চোখ বিশেষজ্ঞ দেখাও।",
+        "risk_level": "Medium",
+        "recommended_doctor": "Ophthalmologist (অফথালমোলজিস্ট)"
+    },
+    {
+        "symptom_id": "SYM024",
+        "category_id": "CAT007",
+        "advice_bangla": "গলা ব্যথা হলে গরম লবণ পানি দিয়ে গলা কোলাই করো; বেশিদিন থাকলে EN T-এ দেখাও।",
+        "risk_level": "Low",
+        "recommended_doctor": "ENT Specialist (ইএনটি স্পেশালিস্ট)"
+    },
+    {
+        "symptom_id": "SYM026",
+        "category_id": "CAT008",
+        "advice_bangla": "জয়েন্টে ব্যথা কমাতে হালকা বিশ্রাম ও আইস/হিট প্রয়োগ করো; দীর্ঘস্থায়ী হলে অর্থোপেডিক দেখাও।",
+        "risk_level": "Low",
+        "recommended_doctor": "Orthopedic (অর্থোপেডিক)"
+    },
+    {
+        "symptom_id": "SYM029",
+        "category_id": "CAT009",
+        "advice_bangla": "ঘুম সমস্যা থাকলে নিয়মিত রুটিন মেনো; দীর্ঘস্থায়ী হলে মানসিক স্বাস্থ্য বিশেষজ্ঞের সাথে কথা বলো।",
+        "risk_level": "Low",
+        "recommended_doctor": "Psychologist/Psychiatrist (মানসিক স্বাস্থ্য বিশেষজ্ঞ)"
+    },
+    {
+        "symptom_id": "SYM032",
+        "category_id": "CAT012",
+        "advice_bangla": "প্রস্রাবে জ্বালা থাকলে বেশি পানি পান করো এবং দ্রুত ইউরিনারি পরীক্ষা করাও।",
+        "risk_level": "Medium",
+        "recommended_doctor": "Urologist (ইউরোলজিস্ট)"
+    },
+    {
+        "symptom_id": "SYM034",
+        "category_id": "CAT013",
+        "advice_bangla": "হঠাৎ অসচেতনতা দেখা দিলে এটি জরুরি; দ্রুত ইমার্জেন্সি সেবা নাও।",
+        "risk_level": "High",
+        "recommended_doctor": "Emergency Care (জরুরি সেবা)"
+    },
+    {
+        "symptom_id": "SYM035",
+        "category_id": "CAT013",
+        "advice_bangla": "কথায় জড়তা, বিভ্রান্তি বা অসম্পূর্ণ কথা বললে দ্রুত চিকিৎসা নাও — স্ট্রোক বা অন্য জটিলতার সম্ভাব্য সূচক।",
+        "risk_level": "High",
+        "recommended_doctor": "Emergency Care (জরুরি সেবা) / Neurologist (নিউরোলজিস্ট)"
+    },
+    {
+        "symptom_id": "SYM039",
+        "category_id": "CAT011",
+        "advice_bangla": "অ্যালার্জি হলে অ্যালার্জি এড়াতে পরিবেশ পরিবর্তন ও অ্যান্টিহিস্টামিন সহায়তা; গুরুতর হলে অ্যালার্জিস্ট দেখাও।",
+        "risk_level": "Medium",
+        "recommended_doctor": "Allergist (অ্যালার্জিস্ট)"
+    }
+]

@@ -1,0 +1,67 @@
+[
+    {
+        "category_id": "CAT001",
+        "doctor_type": "Pulmonologist",
+        "doctor_bangla": "পালমোনোলজিস্ট (Pulmonologist)"
+    },
+    {
+        "category_id": "CAT002",
+        "doctor_type": "Neurologist",
+        "doctor_bangla": "নিউরোলজিস্ট (Neurologist)"
+    },
+    {
+        "category_id": "CAT003",
+        "doctor_type": "Gastroenterologist",
+        "doctor_bangla": "গ্যাস্ট্রোএনটেরোলজিস্ট (Gastroenterologist)"
+    },
+    {
+        "category_id": "CAT004",
+        "doctor_type": "Cardiologist",
+        "doctor_bangla": "কার্ডিওলজিস্ট (Cardiologist)"
+    },
+    {
+        "category_id": "CAT005",
+        "doctor_type": "Dermatologist",
+        "doctor_bangla": "ডার্মাটোলজিস্ট (Dermatologist)"
+    },
+    {
+        "category_id": "CAT006",
+        "doctor_type": "Ophthalmologist",
+        "doctor_bangla": "অফথালমোলজিস্ট (Ophthalmologist)"
+    },
+    {
+        "category_id": "CAT007",
+        "doctor_type": "ENT Specialist",
+        "doctor_bangla": "ইএনটি স্পেশালিস্ট (ENT Specialist)"
+    },
+    {
+        "category_id": "CAT008",
+        "doctor_type": "Orthopedic",
+        "doctor_bangla": "অর্থোপেডিক চিকিৎসক (Orthopedic)"
+    },
+    {
+        "category_id": "CAT009",
+        "doctor_type": "Psychologist/Psychiatrist",
+        "doctor_bangla": "মানসিক স্বাস্থ্য বিশেষজ্ঞ (Psychologist/Psychiatrist)"
+    },
+    {
+        "category_id": "CAT010",
+        "doctor_type": "General Physician",
+        "doctor_bangla": "সাধারণ ডাক্তার (General Physician)"
+    },
+    {
+        "category_id": "CAT011",
+        "doctor_type": "Allergist",
+        "doctor_bangla": "অ্যালার্জিস্ট (Allergist)"
+    },
+    {
+        "category_id": "CAT012",
+        "doctor_type": "Urologist",
+        "doctor_bangla": "ইউরোলজিস্ট (Urologist)"
+    },
+    {
+        "category_id": "CAT013",
+        "doctor_type": "Emergency Care",
+        "doctor_bangla": "জরুরি সেবা (Emergency Care)"
+    }
+]

@@ -1,0 +1,197 @@
+[
+    {
+        "symptom_id": "SYM001",
+        "symptom": "জ্বর (Fever)",
+        "category_id": "CAT010"
+    },
+    {
+        "symptom_id": "SYM002",
+        "symptom": "ঠাণ্ডা লাগা / কুল Forschung (Cold symptoms)",
+        "category_id": "CAT010"
+    },
+    {
+        "symptom_id": "SYM003",
+        "symptom": "কাশি (Cough)",
+        "category_id": "CAT001"
+    },
+    {
+        "symptom_id": "SYM004",
+        "symptom": "শ্বাসকষ্ট (Shortness of Breath)",
+        "category_id": "CAT001"
+    },
+    {
+        "symptom_id": "SYM005",
+        "symptom": "বুকে চাপ/উপদ্রব (Chest Pressure/Discomfort)",
+        "category_id": "CAT001"
+    },
+    {
+        "symptom_id": "SYM006",
+        "symptom": "হাঁপানি/শ্বাসের সিঁট্টান (Wheezing/Asthma-like)",
+        "category_id": "CAT001"
+    },
+    {
+        "symptom_id": "SYM007",
+        "symptom": "নাক বন্ধ/নাকে স্টাফি (Nasal Congestion)",
+        "category_id": "CAT007"
+    },
+    {
+        "symptom_id": "SYM008",
+        "symptom": "মাথা ব্যথা (Headache)",
+        "category_id": "CAT002"
+    },
+    {
+        "symptom_id": "SYM009",
+        "symptom": "মাথা ঘোরা/বালান্স হারানো (Dizziness/Vertigo)",
+        "category_id": "CAT002"
+    },
+    {
+        "symptom_id": "SYM010",
+        "symptom": "চোখ ঝাপসা/দৃষ্টি সমস্য (Blurred Vision)",
+        "category_id": "CAT006"
+    },
+    {
+        "symptom_id": "SYM011",
+        "symptom": "হাত-পা ঝিনঝিন করা/অবশতা (Numbness/Tingling)",
+        "category_id": "CAT002"
+    },
+    {
+        "symptom_id": "SYM012",
+        "symptom": "ক্লান্তি/অতি দুর্বলতা (Extreme Fatigue)",
+        "category_id": "CAT010"
+    },
+    {
+        "symptom_id": "SYM013",
+        "symptom": "পেট ব্যথা (Abdominal Pain)",
+        "category_id": "CAT003"
+    },
+    {
+        "symptom_id": "SYM014",
+        "symptom": "বমি (Nausea/Vomiting)",
+        "category_id": "CAT003"
+    },
+    {
+        "symptom_id": "SYM015",
+        "symptom": "ডায়রিয়া (Diarrhea)",
+        "category_id": "CAT003"
+    },
+    {
+        "symptom_id": "SYM016",
+        "symptom": "কোষ্ঠকাঠিন্য (Constipation)",
+        "category_id": "CAT003"
+    },
+    {
+        "symptom_id": "SYM017",
+        "symptom": "বুকে তীব্র ব্যথা (Severe Chest Pain)",
+        "category_id": "CAT004"
+    },
+    {
+        "symptom_id": "SYM018",
+        "symptom": "হৃদস্পন্দন দ্রুত/অস্বাভাবিক (Palpitations)",
+        "category_id": "CAT004"
+    },
+    {
+        "symptom_id": "SYM019",
+        "symptom": "চুলকানি (Itching)",
+        "category_id": "CAT005"
+    },
+    {
+        "symptom_id": "SYM020",
+        "symptom": "র‍্যাশ/চর্মবিকৃতি (Rash)",
+        "category_id": "CAT005"
+    },
+    {
+        "symptom_id": "SYM021",
+        "symptom": "চামড়া লাল/সোয়েলিং (Redness/Swelling of skin)",
+        "category_id": "CAT005"
+    },
+    {
+        "symptom_id": "SYM022",
+        "symptom": "চোখ লাল হওয়া (Red Eye)",
+        "category_id": "CAT006"
+    },
+    {
+        "symptom_id": "SYM023",
+        "symptom": "চোখে ব্যথা/আরামহীনতা (Eye Pain/Discomfort)",
+        "category_id": "CAT006"
+    },
+    {
+        "symptom_id": "SYM024",
+        "symptom": "গলার ব্যথা (Sore Throat)",
+        "category_id": "CAT007"
+    },
+    {
+        "symptom_id": "SYM025",
+        "symptom": "কানে ব্যথা/কানে কান ফাঁপা (Ear Pain/Fullness)",
+        "category_id": "CAT007"
+    },
+    {
+        "symptom_id": "SYM026",
+        "symptom": "জয়েন্টে ব্যথা (Joint Pain)",
+        "category_id": "CAT008"
+    },
+    {
+        "symptom_id": "SYM027",
+        "symptom": "পিঠে ব্যথা (Back Pain)",
+        "category_id": "CAT008"
+    },
+    {
+        "symptom_id": "SYM028",
+        "symptom": "পেশীতে টান (Muscle Strain)",
+        "category_id": "CAT008"
+    },
+    {
+        "symptom_id": "SYM029",
+        "symptom": "ঘুম না হওয়া/ঘুম সমস্যা (Insomnia/Sleep Trouble)",
+        "category_id": "CAT009"
+    },
+    {
+        "symptom_id": "SYM030",
+        "symptom": "অতিরিক্ত উদ্বেগ/ভীতি (Excessive Worry/Anxiety)",
+        "category_id": "CAT009"
+    },
+    {
+        "symptom_id": "SYM031",
+        "symptom": "মন খারাপ/অংসত্য (Low Mood/Depressive Signs)",
+        "category_id": "CAT009"
+    },
+    {
+        "symptom_id": "SYM032",
+        "symptom": "প্রস্রাবে জ্বালা/পীরাশুনি (Burning on Urination)",
+        "category_id": "CAT012"
+    },
+    {
+        "symptom_id": "SYM033",
+        "symptom": "প্রস্রাব করতে কষ্ট/ফ্রিকোয়েন্সি বাড়া (Frequent/ Difficult Urination)",
+        "category_id": "CAT012"
+    },
+    {
+        "symptom_id": "SYM034",
+        "symptom": "হঠাৎ অসচেতন/বচ্চা (Loss of Consciousness / Fainting)",
+        "category_id": "CAT013"
+    },
+    {
+        "symptom_id": "SYM035",
+        "symptom": "কথা বলতে অযোগ্যতা/বিমূঢ়তা (Slurred Speech/Confusion)",
+        "category_id": "CAT013"
+    },
+    {
+        "symptom_id": "SYM036",
+        "symptom": "তীব্র রক্তক্ষরণ (Severe Bleeding)",
+        "category_id": "CAT013"
+    },
+    {
+        "symptom_id": "SYM037",
+        "symptom": "হঠাৎ দৃষ্টিশক্তি চলে যাওয়া (Sudden Vision Loss)",
+        "category_id": "CAT013"
+    },
+    {
+        "symptom_id": "SYM038",
+        "symptom": "চেষ্টা করলেই শ্বাস বন্ধ হয়ে যাওয়া (Choking sensation)",
+        "category_id": "CAT013"
+    },
+    {
+        "symptom_id": "SYM039",
+        "symptom": "অ্যালার্জি—চোখ লাল/নাকে পানি (Allergic Eyes/Nasal watery)",
+        "category_id": "CAT011"
+    }
+]

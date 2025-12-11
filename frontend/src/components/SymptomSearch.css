@@ -1,0 +1,92 @@
+.symptom-search-container {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    position: relative;
+}
+
+. search-input {
+    font-size: 1.1rem;
+    padding: 12px;
+    border: 2px solid #0d6efd;
+}
+
+.search-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    border-color: #0d6efd;
+}
+
+.suggestions-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+.suggestion-item {
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.suggestion-item:hover {
+    background-color: #e7f3ff;
+    transform: translateX(5px);
+}
+
+.selected-symptoms {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 2px dashed #0d6efd;
+}
+
+.selected-symptom-badge {
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    cursor: default;
+    transition: all 0.2s;
+}
+
+.selected-symptom-badge:hover {
+    transform: scale(1.05);
+}
+
+.remove-icon {
+    font-size: 0.8rem;
+    transition: all 0.2s;
+}
+
+.remove-icon:hover {
+    transform: scale(1.3);
+    color: #dc3545;
+}
+
+/* Scrollbar styling */
+.suggestions-dropdown::-webkit-scrollbar {
+    width: 8px;
+}
+
+.suggestions-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.suggestions-dropdown::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.suggestions-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

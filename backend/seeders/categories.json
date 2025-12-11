@@ -1,0 +1,80 @@
+[
+    {
+        "category_id": "CAT001",
+        "name": "শ্বাসতন্ত্র সমস্যা (Respiratory Issues)",
+        "description": "শ্বাস-প্রশ্বাস, ফুসফুস ও এয়ারওয়ে সম্পর্কিত লক্ষণ।",
+        "default_risk": "High"
+    },
+    {
+        "category_id": "CAT002",
+        "name": "নিউরোলজিক্যাল সমস্যা (Neurological Issues)",
+        "description": "মস্তিষ্ক, স্নায়ু, মাথা ঘোরা ও ঘন ঘন মাথা ব্যথার লক্ষণ।",
+        "default_risk": "Medium"
+    },
+    {
+        "category_id": "CAT003",
+        "name": "পাচনতন্ত্র সমস্যা (Digestive Issues)",
+        "description": "পেট, হজম, বমি ও ডায়রিয়া-জাতীয় লক্ষণ।",
+        "default_risk": "Medium"
+    },
+    {
+        "category_id": "CAT004",
+        "name": "কার্ডিওভাসকুলার সমস্যা (Cardiovascular Issues)",
+        "description": "হৃদয়সংক্রান্ত অস্বস্তি, বুক ব্যথা, হার্টবিট সমস্যার লক্ষণ।",
+        "default_risk": "High"
+    },
+    {
+        "category_id": "CAT005",
+        "name": "চর্মরোগ ও ত্বক সমস্য (Skin & Dermatology)",
+        "description": "চুলকানি, র‍্যাশ, লালচে দাগ ইত্যাদি।",
+        "default_risk": "Low"
+    },
+    {
+        "category_id": "CAT006",
+        "name": "চক্ষু সমস্যা (Eye Issues)",
+        "description": "চোখ লাল হওয়া, ঝাপসা দেখা বা চোখে ব্যথা।",
+        "default_risk": "Medium"
+    },
+    {
+        "category_id": "CAT007",
+        "name": "কান-নাক-গলা (ENT Issues)",
+        "description": "কণ্ঠস্বর পরিবর্তন, কানে ব্যথা, গলা ব্যথা ইত্যাদি।",
+        "default_risk": "Low"
+    },
+    {
+        "category_id": "CAT008",
+        "name": "অস্থি-মাসল সমস্যা (Musculoskeletal Issues)",
+        "description": "জয়েন্টে ব্যথা, পিঠে ব্যথা, পেশীতে টান ইত্যাদি।",
+        "default_risk": "Low"
+    },
+    {
+        "category_id": "CAT009",
+        "name": "মানসিক স্বাস্থ্য সূচক (Mental Health Indicators)",
+        "description": "ঘুম সমস্যা, অবসাদ, উদ্বেগ — নির্দেশক লক্ষণ (নন-ডায়াগনস্টিক)।",
+        "default_risk": "Medium"
+    },
+    {
+        "category_id": "CAT010",
+        "name": "জেনারেল সাধারণ লক্ষণ (General Symptoms)",
+        "description": "জ্বর, দুর্বলতা, ক্লান্তি ইত্যাদি সাধারণ লক্ষণ।",
+        "default_risk": "Low"
+    },
+    {
+        "category_id": "CAT011",
+        "name": "এলার্জি সম্পর্কিত লক্ষণ (Allergy Related)",
+        "description": "হাত, ত্বক, শ্বাস-প্রশ্বাস বা নাকে অ্যালার্জিক প্রতিক্রিয়া।",
+        "default_risk": "Medium"
+    },
+    {
+        "category_id": "CAT012",
+        "name": "মুত্রতন্ত্র সমস্যা (Urinary Issues)",
+        "description": "প্রস্রাবে সমস্যা, জ্বালা বা দুর্বলতা সম্পর্কিত লক্ষণ।",
+        "default_risk": "Medium"
+    },
+    {
+        "category_id": "CAT013",
+        "name": "চিন্তিত ইমার্জেন্সি নির্দেশক (Emergency Indicators)",
+        "description": "জরুরি অবস্থার ধারণা দেয় এমন উচ্চ রিস্ক লক্ষণ।",
+        "default_risk": "High"
+    }
+]
