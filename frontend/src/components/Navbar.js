@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Navbar, Nav, Container, Button } from 'react-bootstrap';
+import { Navbar, Nav, Container, Button, NavDropdown } from 'react-bootstrap';
 import { FaHeartbeat, FaUser, FaSignOutAlt, FaSignInAlt } from 'react-icons/fa';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -28,8 +28,12 @@ const NavigationBar = () => {
                         <Nav.Link as={Link} to="/">হোম</Nav.Link>
                         <Nav.Link as={Link} to="/symptom-checker">সিম্পটম চেকার</Nav.Link>
                         <Nav.Link as={Link} to="/bmi-calculator">BMI ক্যালকুলেটর</Nav.Link>
-                        <Nav.Link as={Link} to="/articles">হেলথ টিপস</Nav.Link>
-                        <Nav.Link as={Link} to="/hospitals">হাসপাতাল</Nav.Link>
+
+                        <NavDropdown title="আরও তথ্য" id="basic-nav-dropdown">
+                            <NavDropdown.Item as={Link} to="/articles">হেলথ টিপস</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/first-aid">প্রাথমিক চিকিৎসা</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/hospitals">হাসপাতাল</NavDropdown.Item>
+                        </NavDropdown>
 
                         {isAuthenticated ? (
                             <>
