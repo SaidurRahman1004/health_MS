@@ -13,7 +13,6 @@ const SymptomChecker = () => {
     const [error, setError] = useState(null);
 
     const handleSymptomsChange = (symptoms) => {
-        console.log('✅ Selected symptoms:', symptoms);
         setSelectedSymptoms(symptoms);
         // Clear previous results when symptoms change
         if (results) {
@@ -25,8 +24,6 @@ const SymptomChecker = () => {
     };
 
     const handleCheckSymptoms = async () => {
-        console.log('🔍 Button clicked!  Starting symptom check...');
-
         if (selectedSymptoms.length === 0) {
             setError('অন্তত একটি লক্ষণ নির্বাচন করুন');
             return;
@@ -38,23 +35,15 @@ const SymptomChecker = () => {
 
         try {
             const symptomIds = selectedSymptoms.map(s => s.symptom_id);
-            console.log('📤 Sending symptom IDs:', symptomIds);
 
             const requestData = {
                 symptom_ids: symptomIds,
                 user_id: user?._id || null
             };
 
-            console.log('📤 Full request data:', requestData);
-
             const response = await symptomAPI.checkSymptoms(requestData);
 
-            console.log('📥 Full API response:', response);
-            console.log('📥 Response data:', response.data);
-            console.log('📥 Response status:', response.status);
-
             if (response && response.data) {
-                console.log('✅ Setting results to state:', response.data);
                 setResults(response.data);
 
                 // Scroll to results
@@ -65,27 +54,19 @@ const SymptomChecker = () => {
                     }
                 }, 100);
             } else {
-                console.error('❌ No data in response');
                 setError('সার্ভার থেকে কোনো ডাটা আসেনি');
             }
 
         } catch (err) {
-            console.error('❌ Full error object:', err);
-
             if (err.response) {
-                console.error('❌ Error response data:', err.response.data);
-                console.error('❌ Error status:', err.response.status);
                 setError(err.response.data?.message || 'সার্ভার এরর');
             } else if (err.request) {
-                console.error('❌ No response received:', err.request);
                 setError('সার্ভারের সাথে সংযোগ করতে পারছে না');
             } else {
-                console.error('❌ Error message:', err.message);
-                setError('কিছু ভুল হয়েছে:  ' + err.message);
+                setError('কিছু ভুল হয়েছে: ' + err.message);
             }
         } finally {
             setLoading(false);
-            console.log('🏁 Check process completed');
         }
     };
 
@@ -98,10 +79,7 @@ const SymptomChecker = () => {
         return badges[risk] || badges['Low'];
     };
 
-    // Log when results change
-    React.useEffect(() => {
-        console.log('🔄 Results state updated:', results);
-    }, [results]);
+
 
     return (
         <Container className="mt-5 mb-5">
@@ -339,20 +317,7 @@ const SymptomChecker = () => {
                 </div>
             )}
 
-            {/* Debug Info (Remove in production) */}
-            {process.env.NODE_ENV === 'development' && (
-                <Card className="mt-3 bg-dark text-white">
-                    <Card.Body>
-                        <small>
-                            <strong>Debug Info: </strong><br />
-                            Selected Symptoms: {selectedSymptoms.length}<br />
-                            Results Available: {results ? 'Yes' : 'No'}<br />
-                            Loading: {loading ? 'Yes' : 'No'}<br />
-                            Error: {error || 'None'}
-                        </small>
-                    </Card.Body>
-                </Card>
-            )}
+
         </Container>
     );
 };
