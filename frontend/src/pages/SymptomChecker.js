@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Container, Card, Button, Alert, Spinner, Row, Col, Badge } from 'react-bootstrap';
 import { FaCheckCircle, FaExclamationTriangle, FaHospital } from 'react-icons/fa';
 import SymptomSearch from '../components/SymptomSearch';
@@ -12,11 +12,27 @@ const SymptomChecker = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const handleSymptomsChange = (symptoms) => {
+    // Log state changes for debugging
+    useEffect(() => {
+        console.log('SymptomChecker - Results updated:', results);
+    }, [results]);
+
+    useEffect(() => {
+        console.log('SymptomChecker - Selected symptoms updated:', selectedSymptoms);
+    }, [selectedSymptoms]);
+
+    // Memoize the callback to prevent unnecessary re-renders
+    const handleSymptomsChange = useCallback((symptoms) => {
+        console.log('handleSymptomsChange called with:', symptoms);
         setSelectedSymptoms(symptoms);
-        setResults(null);
+        // Only clear results if user is removing symptoms or changing selection
+        // Don't clear during initial component mount or when results are already null
+        if (results !== null) {
+            console.log('Clearing previous results due to symptom change');
+            setResults(null);
+        }
         setError(null);
-    };
+    }, [results]);
 
     const handleCheckSymptoms = async () => {
         if (selectedSymptoms.length === 0) {
@@ -24,29 +40,41 @@ const SymptomChecker = () => {
             return;
         }
 
+        console.log('Starting symptom check with:', selectedSymptoms);
         setLoading(true);
         setError(null);
+        setResults(null); // Clear previous results before new check
 
         try {
             const symptomIds = selectedSymptoms.map(s => s.symptom_id);
+            console.log('Calling API with symptom IDs:', symptomIds);
+            
             const response = await symptomAPI.checkSymptoms({
                 symptom_ids: symptomIds,
                 user_id: user?._id || null
             });
 
+            console.log('API Response received:', response.data);
             setResults(response.data);
+            console.log('Results state updated successfully');
 
+            // Auto-scroll to results with a slight delay to ensure DOM is updated
             setTimeout(() => {
                 const element = document.getElementById('results-section');
                 if (element) {
+                    console.log('Scrolling to results section');
                     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                    console.warn('Results section element not found in DOM');
                 }
             }, 100);
 
         } catch (err) {
+            console.error('Error checking symptoms:', err);
             setError(err.response?.data?.message || 'কিছু ভুল হয়েছে');
         } finally {
             setLoading(false);
+            console.log('Symptom check completed');
         }
     };
 
@@ -117,7 +145,7 @@ const SymptomChecker = () => {
                 </Card.Body>
             </Card>
 
-            {results && (
+            {results !== null && (
                 <div id="results-section" className="mt-5">
                     <Card className="shadow-lg border-0 result-card">
                         <Card.Header className={`bg-${getRiskColor(results.overall_risk)} text-white py-4`}>
@@ -158,9 +186,9 @@ const SymptomChecker = () => {
                                         বিস্তারিত পরামর্শ ও সুপারিশ
                                     </h5>
 
-                                    {results.results.map((item, index) => (
+                                    {results.results.map((item) => (
                                         <Card
-                                            key={index}
+                                            key={item.symptom_id}
                                             className="mb-4 border-0 shadow-sm hover-card"
                                             style={{
                                                 borderLeft: `5px solid ${item.risk_level === 'High' ? '#dc3545' :
@@ -172,7 +200,7 @@ const SymptomChecker = () => {
                                                 <div className="d-flex justify-content-between align-items-start mb-3">
                                                     <div className="flex-grow-1">
                                                         <h5 className="text-primary mb-2">
-                                                            {index + 1}. {item.symptom}
+                                                            {results.results.indexOf(item) + 1}. {item.symptom}
                                                         </h5>
                                                         <p className="text-muted mb-0">
                                                             <strong>📂 বিভাগ:</strong> {item.category}
