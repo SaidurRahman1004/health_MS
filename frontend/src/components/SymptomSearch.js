@@ -44,7 +44,7 @@ const SymptomSearch = ({ onSymptomsChange }) => {
             setAllSymptoms(response.data);
             setLoading(false);
         } catch (error) {
-            console.error('Error fetching symptoms:', error);
+            // Error fetching symptoms - silently fail and show empty list
             setLoading(false);
         }
     };
