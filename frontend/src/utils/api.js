@@ -1,16 +1,19 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api';
 
-// Create axios instance
+const API_URL = process.env.REACT_APP_API_URL || 'https://healthcheck-backend-9pai.onrender.com';
+
+
+
 const api = axios.create({
     baseURL: API_URL,
     headers: {
         'Content-Type': 'application/json'
-    }
+    },
+    timeout: 30000 // 30 seconds timeout
 });
 
-// Add token to requests if available
+// Request interceptor
 api.interceptors.request.use(
     (config) => {
         const token = localStorage.getItem('token');
@@ -20,6 +23,21 @@ api.interceptors.request.use(
         return config;
     },
     (error) => {
+        return Promise.reject(error);
+    }
+);
+
+// Response interceptor for better error handling
+api.interceptors.response.use(
+    (response) => response,
+    (error) => {
+        if (error.response) {
+            console.error('API Error:', error.response.data);
+        } else if (error.request) {
+            console.error('Network Error:', error.request);
+        } else {
+            console.error('Error:', error.message);
+        }
         return Promise.reject(error);
     }
 );
