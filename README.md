@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![HealthCheck Pro Banner](https://img.shields.io/badge/HealthCheck-Pro-blue? style=for-the-badge&logo=healthcare&logoColor=white)
+
 
 **একটি সম্পূর্ণ বাংলা স্বাস্থ্য ব্যবস্থাপনা ওয়েব অ্যাপ্লিকেশন**
 
@@ -514,50 +514,45 @@ Environment Variables:
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/SaidurRahman1004">
-        <img src="https://github.com/SaidurRahman1004.png" width="100px;" alt="Saidur Rahman"/><br />
-        <sub><b>Md. Saidur Rahman</b></sub>
-      </a><br />
-      <sub>Full Stack Developer</sub>
-    </td>
-    <td align="center">
-      <img src="https://via.placeholder.com/100" width="100px;" alt="Sifat"/><br />
+     
       <sub><b>Md. Sifat Hossan</b></sub><br />
       <sub>Frontend Developer</sub>
     </td>
     <td align="center">
-      <img src="https://via.placeholder.com/100" width="100px;" alt="Tonmoy"/><br />
+    
       <sub><b>Hemonta Debnath Tonmoy</b></sub><br />
       <sub>Backend Developer</sub>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://via.placeholder.com/100" width="100px;" alt="Rifat"/><br />
+    
       <sub><b>Md. Rifat Hasan</b></sub><br />
       <sub>Database Designer</sub>
     </td>
     <td align="center">
-      <img src="https://via.placeholder.com/100" width="100px;" alt="Sabbir"/><br />
+
       <sub><b>MD Sabbir Ahmad</b></sub><br />
       <sub>UI/UX Designer</sub>
     </td>
     <td align="center">
-      <img src="https://via.placeholder.com/100" width="100px;" alt="Imran"/><br />
       <sub><b>Md Imran Hossain</b></sub><br />
       <sub>QA Tester</sub>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://via.placeholder.com/100" width="100px;" alt="Mahim"/><br />
       <sub><b>Md Mahim Hossen</b></sub><br />
       <sub>Content Writer</sub>
     </td>
     <td align="center">
-      <img src="https://via.placeholder.com/100" width="100px;" alt="Siam"/><br />
       <sub><b>Md Shams al Siam</b></sub><br />
       <sub>Documentation</sub>
+    </td>
+        <td align="center">
+        <sub><b>Md. Saidur Rahman</b></sub>
+      </a><br />
+      <sub>Full Stack Developer</sub>
     </td>
     <td></td>
   </tr>
