@@ -14,21 +14,29 @@ const SymptomChecker = () => {
 
     // Log state changes for debugging
     useEffect(() => {
-        console.log('SymptomChecker - Results updated:', results);
+        if (process.env.NODE_ENV === 'development') {
+            console.log('SymptomChecker - Results updated:', results);
+        }
     }, [results]);
 
     useEffect(() => {
-        console.log('SymptomChecker - Selected symptoms updated:', selectedSymptoms);
+        if (process.env.NODE_ENV === 'development') {
+            console.log('SymptomChecker - Selected symptoms updated:', selectedSymptoms);
+        }
     }, [selectedSymptoms]);
 
     // Memoize the callback to prevent unnecessary re-renders
     const handleSymptomsChange = useCallback((symptoms) => {
-        console.log('handleSymptomsChange called with:', symptoms);
+        if (process.env.NODE_ENV === 'development') {
+            console.log('handleSymptomsChange called with:', symptoms);
+        }
         setSelectedSymptoms(symptoms);
         // Only clear results if user is removing symptoms or changing selection
         // Don't clear during initial component mount or when results are already null
         if (results !== null) {
-            console.log('Clearing previous results due to symptom change');
+            if (process.env.NODE_ENV === 'development') {
+                console.log('Clearing previous results due to symptom change');
+            }
             setResults(null);
         }
         setError(null);
@@ -40,41 +48,57 @@ const SymptomChecker = () => {
             return;
         }
 
-        console.log('Starting symptom check with:', selectedSymptoms);
+        if (process.env.NODE_ENV === 'development') {
+            console.log('Starting symptom check with:', selectedSymptoms);
+        }
         setLoading(true);
         setError(null);
         setResults(null); // Clear previous results before new check
 
         try {
             const symptomIds = selectedSymptoms.map(s => s.symptom_id);
-            console.log('Calling API with symptom IDs:', symptomIds);
+            if (process.env.NODE_ENV === 'development') {
+                console.log('Calling API with symptom IDs:', symptomIds);
+            }
             
             const response = await symptomAPI.checkSymptoms({
                 symptom_ids: symptomIds,
                 user_id: user?._id || null
             });
 
-            console.log('API Response received:', response.data);
+            if (process.env.NODE_ENV === 'development') {
+                console.log('API Response received:', response.data);
+            }
             setResults(response.data);
-            console.log('Results state updated successfully');
+            if (process.env.NODE_ENV === 'development') {
+                console.log('Results state updated successfully');
+            }
 
             // Auto-scroll to results with a slight delay to ensure DOM is updated
             setTimeout(() => {
                 const element = document.getElementById('results-section');
                 if (element) {
-                    console.log('Scrolling to results section');
+                    if (process.env.NODE_ENV === 'development') {
+                        console.log('Scrolling to results section');
+                    }
                     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 } else {
-                    console.warn('Results section element not found in DOM');
+                    if (process.env.NODE_ENV === 'development') {
+                        console.warn('Results section element not found in DOM');
+                    }
                 }
             }, 100);
 
         } catch (err) {
-            console.error('Error checking symptoms:', err);
+            if (process.env.NODE_ENV === 'development') {
+                console.error('Error checking symptoms:', err);
+            }
             setError(err.response?.data?.message || 'কিছু ভুল হয়েছে');
         } finally {
             setLoading(false);
-            console.log('Symptom check completed');
+            if (process.env.NODE_ENV === 'development') {
+                console.log('Symptom check completed');
+            }
         }
     };
 
@@ -186,7 +210,7 @@ const SymptomChecker = () => {
                                         বিস্তারিত পরামর্শ ও সুপারিশ
                                     </h5>
 
-                                    {results.results.map((item) => (
+                                    {results.results.map((item, index) => (
                                         <Card
                                             key={item.symptom_id}
                                             className="mb-4 border-0 shadow-sm hover-card"
@@ -200,7 +224,7 @@ const SymptomChecker = () => {
                                                 <div className="d-flex justify-content-between align-items-start mb-3">
                                                     <div className="flex-grow-1">
                                                         <h5 className="text-primary mb-2">
-                                                            {results.results.indexOf(item) + 1}. {item.symptom}
+                                                            {index + 1}. {item.symptom}
                                                         </h5>
                                                         <p className="text-muted mb-0">
                                                             <strong>📂 বিভাগ:</strong> {item.category}
