@@ -73,12 +73,12 @@ npm start
 
 ## 👨‍💻 Author
 
-**Md. Sifat Hossan**
-**Hemonta Debnath Tonmoy** 
-**Md. Rifat hasan**
-**MD Sabbir Ahmad**
-**Md Imran Hossain**
-**Md Mahim Hossen**
+**Md. Sifat Hossan**,
+**Hemonta Debnath Tonmoy** ,
+**Md. Rifat hasan**,
+**MD Sabbir Ahmad**,
+**Md Imran Hossain**,
+**Md Mahim Hossen**,
 **Md Shams al Siam**
 
 
