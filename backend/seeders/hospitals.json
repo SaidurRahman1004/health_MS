@@ -1,24 +1,158 @@
 [
     {
         "hospital_id": "HOSP001",
-        "name_bangla": "ঢাকা মেডিকেল (Dhaka Medical)",
-        "location": "Dhaka",
-        "contact": "+8801300000000",
+        "name_bangla": "ঢাকা মেডিকেল কলেজ হাসপাতাল",
+        "location": "ঢাকা, বকশীবাজার",
+        "contact": "+880-2-9668690",
         "services": [
             "Emergency",
             "Cardiology",
-            "Respiratory"
+            "Respiratory",
+            "Neurology",
+            "ICU"
         ]
     },
     {
         "hospital_id": "HOSP002",
-        "name_bangla": "স্কয়ার হাসপাতাল (Square Hospital)",
-        "location": "Dhaka",
-        "contact": "+8801700000000",
+        "name_bangla": "স্কয়ার হাসপাতাল লিমিটেড",
+        "location": "ঢাকা, পান্থপথ",
+        "contact": "+880-2-8159457",
         "services": [
             "Emergency",
             "Gastroenterology",
-            "Dermatology"
+            "Dermatology",
+            "Oncology",
+            "Pediatrics"
+        ]
+    },
+    {
+        "hospital_id": "HOSP003",
+        "name_bangla": "বঙ্গবন্ধু শেখ মুজিব মেডিকেল বিশ্ববিদ্যালয়",
+        "location": "ঢাকা, শাহবাগ",
+        "contact": "+880-2-9668501",
+        "services": [
+            "Emergency",
+            "Cardiology",
+            "Neurosurgery",
+            "Nephrology",
+            "Burn Unit"
+        ]
+    },
+    {
+        "hospital_id": "HOSP004",
+        "name_bangla": "ইউনাইটেড হাসপাতাল লিমিটেড",
+        "location": "ঢাকা, গুলশান",
+        "contact": "+880-2-8836000",
+        "services": [
+            "Emergency",
+            "Cardiology",
+            "Orthopedic",
+            "Maternity",
+            "Eye Care"
+        ]
+    },
+    {
+        "hospital_id": "HOSP005",
+        "name_bangla": "ল্যাবএইড স্পেশালাইজড হাসপাতাল",
+        "location": "ঢাকা, ধানমন্ডি",
+        "contact": "+880-2-58611212",
+        "services": [
+            "Emergency",
+            "Surgery",
+            "Diagnostic",
+            "Radiology",
+            "ICU"
+        ]
+    },
+    {
+        "hospital_id": "HOSP006",
+        "name_bangla": "এভারকেয়ার হাসপাতাল ঢাকা",
+        "location": "ঢাকা, বসুন্ধরা",
+        "contact": "+880-10678-00000",
+        "services": [
+            "Emergency",
+            "Cancer Care",
+            "Heart Institute",
+            "Neuroscience",
+            "Trauma"
+        ]
+    },
+    {
+        "hospital_id": "HOSP007",
+        "name_bangla": "হলি ফ্যামিলি রেড ক্রিসেন্ট মেডিকেল কলেজ",
+        "location": "ঢাকা, মগবাজার",
+        "contact": "+880-2-9337721",
+        "services": [
+            "Emergency",
+            "Maternity",
+            "Pediatrics",
+            "General Surgery",
+            "ENT"
+        ]
+    },
+    {
+        "hospital_id": "HOSP008",
+        "name_bangla": "চট্টগ্রাম মেডিকেল কলেজ হাসপাতাল",
+        "location": "চট্টগ্রাম",
+        "contact": "+880-31-2523300",
+        "services": [
+            "Emergency",
+            "Cardiology",
+            "Neurology",
+            "Gastroenterology",
+            "ICU"
+        ]
+    },
+    {
+        "hospital_id": "HOSP009",
+        "name_bangla": "রাজশাহী মেডিকেল কলেজ হাসপাতাল",
+        "location": "রাজশাহী",
+        "contact": "+880-721-772150",
+        "services": [
+            "Emergency",
+            "Surgery",
+            "Medicine",
+            "Gynecology",
+            "Pediatrics"
+        ]
+    },
+    {
+        "hospital_id": "HOSP010",
+        "name_bangla": "খুলনা মেডিকেল কলেজ হাসপাতাল",
+        "location": "খুলনা",
+        "contact": "+880-41-760101",
+        "services": [
+            "Emergency",
+            "Cardiology",
+            "Neurology",
+            "Orthopedic",
+            "Burn Unit"
+        ]
+    },
+    {
+        "hospital_id": "HOSP011",
+        "name_bangla": "সিলেট ওসমানী মেডিকেল কলেজ হাসপাতাল",
+        "location": "সিলেট",
+        "contact": "+880-821-713010",
+        "services": [
+            "Emergency",
+            "Medicine",
+            "Surgery",
+            "Pediatrics",
+            "Gynecology"
+        ]
+    },
+    {
+        "hospital_id": "HOSP012",
+        "name_bangla": "কুমিল্লা মেডিকেল কলেজ হাসপাতাল",
+        "location": "কুমিল্লা",
+        "contact": "+880-81-76801",
+        "services": [
+            "Emergency",
+            "General Medicine",
+            "Surgery",
+            "Orthopedic",
+            "ENT"
         ]
     }
 ]
