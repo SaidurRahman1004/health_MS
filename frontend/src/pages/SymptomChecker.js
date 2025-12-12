@@ -1,244 +1,215 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container, Card, Button, Alert, Spinner, Row, Col, Badge } from 'react-bootstrap';
 import { FaCheckCircle, FaExclamationTriangle, FaHospital } from 'react-icons/fa';
 import SymptomSearch from '../components/SymptomSearch';
 import { symptomAPI } from '../utils/api';
 import { useAuth } from '../contexts/AuthContext';
 
-const SymptomChecker = () => {
-    const { user } = useAuth();
-    const [selectedSymptoms, setSelectedSymptoms] = useState([]);
-    const [results, setResults] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+class SymptomChecker extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedSymptoms: [],
+            results: null,
+            loading: false,
+            error: null,
+            showResults: false
+        };
+    }
 
-    const handleSymptomsChange = (symptoms) => {
-        setSelectedSymptoms(symptoms);
-        setResults(null);
-        setError(null);
-    };
+    handleSymptomsChange = (symptoms) => {
+        this.setState({
+            selectedSymptoms: symptoms,
+            showResults: false,
+            results: null,
+            error: null
+        });
+    }
 
-    const handleCheckSymptoms = async () => {
+    handleCheckSymptoms = async () => {
+        const { selectedSymptoms } = this.state;
+
         if (selectedSymptoms.length === 0) {
-            setError('অন্তত একটি লক্ষণ নির্বাচন করুন');
+            this.setState({ error: 'অন্তত একটি লক্ষণ নির্বাচন করুন' });
             return;
         }
 
-        setLoading(true);
-        setError(null);
+        this.setState({ loading: true, error: null, showResults: false });
 
         try {
             const symptomIds = selectedSymptoms.map(s => s.symptom_id);
+            const userId = this.props.user ? this.props.user._id : null;
+
             const response = await symptomAPI.checkSymptoms({
                 symptom_ids: symptomIds,
-                user_id: user?._id || null
+                user_id: userId
             });
 
-            setResults(response.data);
-
-            setTimeout(() => {
-                const element = document.getElementById('results-section');
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            }, 100);
+            this.setState({
+                results: response.data,
+                showResults: true,
+                loading: false
+            }, () => {
+                setTimeout(() => {
+                    const element = document.getElementById('results-section');
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 200);
+            });
 
         } catch (err) {
-            setError(err.response?.data?.message || 'কিছু ভুল হয়েছে');
-        } finally {
-            setLoading(false);
+            this.setState({
+                error: err.response?.data?.message || 'কিছু ভুল হয়েছে',
+                loading: false,
+                showResults: false
+            });
         }
-    };
+    }
 
-    const getRiskColor = (risk) => {
+    getRiskColor(risk) {
         if (risk === 'High') return 'danger';
         if (risk === 'Medium') return 'warning';
         return 'success';
-    };
+    }
 
-    const getRiskText = (risk) => {
+    getRiskText(risk) {
         if (risk === 'High') return 'উচ্চ ঝুঁকি';
         if (risk === 'Medium') return 'মাঝারি ঝুঁকি';
         return 'নিম্ন ঝুঁকি';
-    };
+    }
 
-    const getRiskIcon = (risk) => {
-        if (risk === 'High') return '🔴';
-        if (risk === 'Medium') return '🟡';
-        return '🟢';
-    };
+    render() {
+        const { selectedSymptoms, results, loading, error, showResults } = this.state;
+        const { user } = this.props;
 
-    return (
-        <Container className="my-5">
-            <Card className="shadow-lg border-0">
-                <Card.Header className="bg-primary text-white text-center py-4">
-                    <h2 className="mb-0">
-                        <FaCheckCircle className="me-2" />
-                        সিম্পটম চেকার
-                    </h2>
-                    <p className="mb-0 mt-2">আপনার লক্ষণ দিয়ে স্বাস্থ্য পরীক্ষা করুন</p>
-                </Card.Header>
+        return (
+            <Container className="my-5">
+                <Card className="shadow-lg border-0">
+                    <Card.Header className="bg-primary text-white text-center py-4">
+                        <h2 className="mb-0">সিম্পটম চেকার</h2>
+                        <p className="mb-0 mt-2">আপনার লক্ষণ দিয়ে স্বাস্থ্য পরীক্ষা করুন</p>
+                    </Card.Header>
 
-                <Card.Body className="p-4">
-                    <Alert variant="warning" className="mb-4">
-                        <FaExclamationTriangle className="me-2" />
-                        <strong>সতর্কতা: </strong> এটি শুধুমাত্র তথ্যমূলক উদ্দেশ্যে। গুরুতর সমস্যার জন্য অবশ্যই ডাক্তারের পরামর্শ নিন।
-                    </Alert>
-
-                    <SymptomSearch onSymptomsChange={handleSymptomsChange} />
-
-                    {error && (
-                        <Alert variant="danger" className="mt-3" dismissible onClose={() => setError(null)}>
-                            <strong>❌ Error:</strong> {error}
+                    <Card.Body className="p-4">
+                        <Alert variant="warning">
+                            <FaExclamationTriangle className="me-2" />
+                            <strong>সতর্কতা:</strong> এটি শুধুমাত্র তথ্যমূলক।
                         </Alert>
-                    )}
 
-                    <div className="text-center mt-4">
-                        <Button
-                            variant="primary"
-                            size="lg"
-                            onClick={handleCheckSymptoms}
-                            disabled={selectedSymptoms.length === 0 || loading}
-                            className="px-5 py-3"
-                        >
-                            {loading ? (
-                                <>
-                                    <Spinner animation="border" size="sm" className="me-2" />
-                                    পরীক্ষা করা হচ্ছে...
-                                </>
-                            ) : (
-                                <>
-                                    <FaCheckCircle className="me-2" />
-                                    পরীক্ষা শুরু করুন ({selectedSymptoms.length} টি লক্ষণ)
-                                </>
-                            )}
-                        </Button>
-                    </div>
-                </Card.Body>
-            </Card>
+                        <SymptomSearch onSymptomsChange={this.handleSymptomsChange} />
 
-            {results && (
-                <div id="results-section" className="mt-5">
-                    <Card className="shadow-lg border-0 result-card">
-                        <Card.Header className={`bg-${getRiskColor(results.overall_risk)} text-white py-4`}>
-                            <h3 className="mb-0 text-center">
-                                {getRiskIcon(results.overall_risk)} পরীক্ষার ফলাফল
-                            </h3>
-                        </Card.Header>
+                        {error && (
+                            <Alert variant="danger" className="mt-3">
+                                {error}
+                            </Alert>
+                        )}
 
-                        <Card.Body className="p-4">
-                            <Row className="mb-4 g-4">
-                                <Col md={6}>
-                                    <Card className="border-0 shadow-sm h-100 text-center p-4">
-                                        <h6 className="text-muted mb-3">সামগ্রিক ঝুঁকি মাত্রা</h6>
-                                        <div style={{ fontSize: '3rem' }} className="mb-2">
-                                            {getRiskIcon(results.overall_risk)}
-                                        </div>
-                                        <Badge bg={getRiskColor(results.overall_risk)} className="fs-4 px-4 py-2">
-                                            {getRiskText(results.overall_risk)}
-                                        </Badge>
-                                    </Card>
-                                </Col>
+                        <div className="text-center mt-4">
+                            <Button
+                                variant="primary"
+                                size="lg"
+                                onClick={this.handleCheckSymptoms}
+                                disabled={selectedSymptoms.length === 0 || loading}
+                                className="px-5 py-3"
+                            >
+                                {loading ? (
+                                    <>
+                                        <Spinner animation="border" size="sm" className="me-2" />
+                                        পরীক্ষা করা হচ্ছে...
+                                    </>
+                                ) : (
+                                    <>পরীক্ষা করুন ({selectedSymptoms.length} টি)</>
+                                )}
+                            </Button>
+                        </div>
 
-                                <Col md={6}>
-                                    <Card className="border-0 shadow-sm h-100 text-center p-4">
-                                        <h6 className="text-muted mb-3">পরীক্ষিত লক্ষণ</h6>
-                                        <div className="display-3 text-primary mb-2">
-                                            {results.total_symptoms}
-                                        </div>
-                                        <p className="text-muted mb-0">টি লক্ষণ বিশ্লেষণ করা হয়েছে</p>
-                                    </Card>
-                                </Col>
-                            </Row>
+                        {/* <Card className="mt-3 bg-info text-white">
+                            <Card.Body>
+                                <small>
+                                    Selected: {selectedSymptoms.length} |
+                                    Loading: {loading ? 'Yes' : 'No'} |
+                                    Show:  {showResults ? 'Yes' : 'No'} |
+                                    Results: {results ? 'Yes' : 'No'}
+                                </small>
+                            </Card.Body>
+                        </Card> */}
+                    </Card.Body>
+                </Card>
 
-                            {results.results && results.results.length > 0 ? (
-                                <>
-                                    <h5 className="mb-4 pb-2 border-bottom">
-                                        <FaHospital className="me-2 text-primary" />
-                                        বিস্তারিত পরামর্শ ও সুপারিশ
-                                    </h5>
+                {showResults && results ? (
+                    <div id="results-section" style={{ marginTop: '30px' }}>
+                        <Card className="shadow-lg border-0">
+                            <Card.Header className={'bg-' + this.getRiskColor(results.overall_risk) + ' text-white py-4'}>
+                                <h3 className="mb-0 text-center">পরীক্ষার ফলাফল</h3>
+                            </Card.Header>
 
-                                    {results.results.map((item, index) => (
-                                        <Card
-                                            key={index}
-                                            className="mb-4 border-0 shadow-sm hover-card"
-                                            style={{
-                                                borderLeft: `5px solid ${item.risk_level === 'High' ? '#dc3545' :
-                                                    item.risk_level === 'Medium' ? '#ffc107' : '#28a745'
-                                                    }`
-                                            }}
-                                        >
-                                            <Card.Body className="p-4">
-                                                <div className="d-flex justify-content-between align-items-start mb-3">
-                                                    <div className="flex-grow-1">
-                                                        <h5 className="text-primary mb-2">
-                                                            {index + 1}. {item.symptom}
-                                                        </h5>
-                                                        <p className="text-muted mb-0">
-                                                            <strong>📂 বিভাগ:</strong> {item.category}
-                                                        </p>
-                                                    </div>
-                                                    <Badge bg={getRiskColor(item.risk_level)} className="px-3 py-2">
-                                                        {getRiskIcon(item.risk_level)} {getRiskText(item.risk_level)}
-                                                    </Badge>
-                                                </div>
-
-                                                <Alert variant="light" className="mb-3 border-start border-4 border-primary">
-                                                    <div className="d-flex">
-                                                        <div className="me-3" style={{ fontSize: '1.5rem' }}>💊</div>
-                                                        <div>
-                                                            <strong className="text-primary">পরামর্শ:</strong>
-                                                            <p className="mb-0 mt-2">{item.advice}</p>
-                                                        </div>
-                                                    </div>
-                                                </Alert>
-
-                                                <div className="bg-success bg-opacity-10 p-3 rounded border border-success">
-                                                    <div className="d-flex align-items-center">
-                                                        <div className="me-3" style={{ fontSize: '1.5rem' }}>🩺</div>
-                                                        <div>
-                                                            <strong className="text-success d-block mb-1">
-                                                                প্রস্তাবিত ডাক্তার:
-                                                            </strong>
-                                                            <h6 className="mb-0 text-dark">
-                                                                {item.recommended_doctor}
-                                                            </h6>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </Card.Body>
+                            <Card.Body className="p-4">
+                                <Row className="mb-4">
+                                    <Col md={6}>
+                                        <Card className="text-center p-4">
+                                            <h6>সামগ্রিক ঝুঁকি</h6>
+                                            <Badge bg={this.getRiskColor(results.overall_risk)} className="fs-4 px-4 py-2">
+                                                {this.getRiskText(results.overall_risk)}
+                                            </Badge>
                                         </Card>
-                                    ))}
-                                </>
-                            ) : (
-                                <Alert variant="warning" className="text-center py-4">
-                                    <h5>⚠️ কোনো ম্যাচিং তথ্য পাওয়া যায়নি</h5>
-                                    <p className="mb-0">অনুগ্রহ করে ডাক্তারের পরামর্শ নিন।</p>
-                                </Alert>
-                            )}
+                                    </Col>
+                                    <Col md={6}>
+                                        <Card className="text-center p-4">
+                                            <h6>মোট লক্ষণ</h6>
+                                            <h1 className="text-primary">{results.total_symptoms}</h1>
+                                        </Card>
+                                    </Col>
+                                </Row>
 
-                            {!user ? (
-                                <Alert variant="info" className="mt-4 mb-0">
-                                    <div className="d-flex align-items-center justify-content-between">
-                                        <div>
-                                            💡 <strong>টিপ:</strong> লগইন করলে আপনার চেকআপ হিস্টরি সেভ হবে!
-                                        </div>
-                                        <Button variant="primary" size="sm" href="/login">
-                                            লগইন করুন
-                                        </Button>
+                                {results.results && results.results.length > 0 ? (
+                                    <div>
+                                        <h5 className="mb-4">
+                                            <FaHospital className="me-2" />
+                                            বিস্তারিত পরামর্শ
+                                        </h5>
+
+                                        {results.results.map((item, idx) => (
+                                            <Card key={idx} className="mb-3 shadow-sm">
+                                                <Card.Body>
+                                                    <div className="d-flex justify-content-between mb-3">
+                                                        <h5 className="text-primary">{idx + 1}. {item.symptom}</h5>
+                                                        <Badge bg={this.getRiskColor(item.risk_level)}>
+                                                            {this.getRiskText(item.risk_level)}
+                                                        </Badge>
+                                                    </div>
+                                                    <p><strong>বিভাগ:</strong> {item.category}</p>
+                                                    <Alert variant="light">
+                                                        <strong>পরামর্শ:</strong> {item.advice}
+                                                    </Alert>
+                                                    <div className="bg-success bg-opacity-10 p-3 rounded">
+                                                        <strong>ডাক্তার:</strong> {item.recommended_doctor}
+                                                    </div>
+                                                </Card.Body>
+                                            </Card>
+                                        ))}
                                     </div>
-                                </Alert>
-                            ) : (
-                                <Alert variant="success" className="mt-4 mb-0">
-                                    ✅ আপনার চেকআপ হিস্টরিতে সেভ করা হয়েছে!
-                                </Alert>
-                            )}
-                        </Card.Body>
-                    </Card>
-                </div>
-            )}
-        </Container>
-    );
-};
+                                ) : (
+                                    <Alert variant="warning">কোনো ফলাফল পাওয়া যায়নি</Alert>
+                                )}
 
-export default SymptomChecker;
+                                {!user && (
+                                    <Alert variant="info" className="mt-4">
+                                        লগইন করুন হিস্টরি সেভের জন্য
+                                    </Alert>
+                                )}
+                            </Card.Body>
+                        </Card>
+                    </div>
+                ) : null}
+            </Container>
+        );
+    }
+}
+
+function SymptomCheckerWrapper() {
+    const { user } = useAuth();
+    return <SymptomChecker user={user} />;
+}
+
+export default SymptomCheckerWrapper;

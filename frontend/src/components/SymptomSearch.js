@@ -14,12 +14,10 @@ const SymptomSearch = ({ onSymptomsChange }) => {
 
     const searchRef = useRef(null);
 
-    // Load all symptoms on component mount
     useEffect(() => {
         fetchSymptoms();
     }, []);
 
-    // Close suggestions when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (searchRef.current && !searchRef.current.contains(event.target)) {
@@ -31,7 +29,6 @@ const SymptomSearch = ({ onSymptomsChange }) => {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
-    // Notify parent component when symptoms change
     useEffect(() => {
         if (onSymptomsChange) {
             onSymptomsChange(selectedSymptoms);
@@ -49,7 +46,6 @@ const SymptomSearch = ({ onSymptomsChange }) => {
         }
     };
 
-    // Filter symptoms based on search
     const handleSearch = (value) => {
         setSearchTerm(value);
 
@@ -59,7 +55,6 @@ const SymptomSearch = ({ onSymptomsChange }) => {
             return;
         }
 
-        // Search in both Bangla and English
         const filtered = allSymptoms.filter(symptom => {
             const alreadySelected = selectedSymptoms.some(
                 s => s.symptom_id === symptom.symptom_id
@@ -77,7 +72,6 @@ const SymptomSearch = ({ onSymptomsChange }) => {
         setShowSuggestions(filtered.length > 0);
     };
 
-    // Add symptom to selected list
     const handleSelectSymptom = (symptom) => {
         if (selectedSymptoms.length >= 5) {
             alert('সর্বোচ্চ ৫টি লক্ষণ নির্বাচন করতে পারবেন');
@@ -90,12 +84,10 @@ const SymptomSearch = ({ onSymptomsChange }) => {
         setShowSuggestions(false);
     };
 
-    // Remove symptom from selected list
     const handleRemoveSymptom = (symptomId) => {
         setSelectedSymptoms(selectedSymptoms.filter(s => s.symptom_id !== symptomId));
     };
 
-    // Clear all selections
     const handleClearAll = () => {
         setSelectedSymptoms([]);
         setSearchTerm('');
@@ -122,7 +114,6 @@ const SymptomSearch = ({ onSymptomsChange }) => {
                             className="search-input"
                         />
 
-                        {/* Auto-suggestion dropdown */}
                         {showSuggestions && filteredSymptoms.length > 0 && (
                             <ListGroup className="suggestions-dropdown">
                                 {filteredSymptoms.slice(0, 10).map((symptom) => (
@@ -146,7 +137,6 @@ const SymptomSearch = ({ onSymptomsChange }) => {
                 </Form.Group>
             </div>
 
-            {/* Selected symptoms */}
             {selectedSymptoms.length > 0 && (
                 <div className="selected-symptoms">
                     <div className="d-flex justify-content-between align-items-center mb-3">
@@ -157,6 +147,7 @@ const SymptomSearch = ({ onSymptomsChange }) => {
                             variant="outline-danger"
                             size="sm"
                             onClick={handleClearAll}
+                            type="button"
                         >
                             সব মুছে ফেলুন
                         </Button>
@@ -181,7 +172,6 @@ const SymptomSearch = ({ onSymptomsChange }) => {
                 </div>
             )}
 
-            {/* Helper text */}
             <Form.Text className="text-muted">
                 💡 টিপস: আপনি যে সমস্যাগুলো অনুভব করছেন তা টাইপ করুন এবং সাজেশন থেকে সিলেক্ট করুন
             </Form.Text>
