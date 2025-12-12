@@ -128,11 +128,15 @@
 
 ### 🏠 Homepage
 ```
+<img width="797" height="921" alt="image" src="https://github.com/user-attachments/assets/fe7da53b-106d-49b7-b204-5336ca667178" />
+
 Beautiful landing page with feature cards and gradient design
 ```
 
 ### 🩺 Symptom Checker
 ```
+<img width="801" height="913" alt="image" src="https://github.com/user-attachments/assets/70b5bef5-1c50-4da5-a738-89edd4d3b6d8" />
+
 ![alt text](image-4.png)
 Interactive symptom selection with real-time suggestions
 Results with risk levels, advice, and doctor recommendations
@@ -140,6 +144,8 @@ Results with risk levels, advice, and doctor recommendations
 
 ### 📊 BMI Calculator
 ```
+<img width="707" height="811" alt="image" src="https://github.com/user-attachments/assets/0847524c-062d-4ec0-8122-8518a1091250" />
+
 ![alt text](image-3.png)
 Dual input mode (Feet/Inches & Centimeters)
 Visual BMI indicator with color-coded results
@@ -147,6 +153,8 @@ Visual BMI indicator with color-coded results
 
 ### 📱 Mobile View
 ```
+<img width="593" height="900" alt="image" src="https://github.com/user-attachments/assets/39280301-4ba4-426e-bdad-ac3be2e4b022" />
+
 ![alt text](image-5.png)
 Fully responsive design
 Touch-friendly interface
