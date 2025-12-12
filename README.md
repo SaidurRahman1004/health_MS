@@ -521,14 +521,14 @@ Environment Variables:
     <td align="center">
     
       <sub><b>Hemonta Debnath Tonmoy</b></sub><br />
-      <sub>Backend Developer</sub>
+      <sub>Backend Developer & Database Designer</sub>
     </td>
   </tr>
   <tr>
     <td align="center">
     
       <sub><b>Md. Rifat Hasan</b></sub><br />
-      <sub>Database Designer</sub>
+      <sub>Content Writer </sub>
     </td>
     <td align="center">
 
