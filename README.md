@@ -509,54 +509,17 @@ Environment Variables:
 
 ## 👥 অবদানকারী
 
-এই প্রজেক্টটি নিম্নলিখিত ডেভেলপারদের সম্মিলিত প্রচেষ্টায় তৈরি: 
+এই প্রজেক্টটি নিম্নলিখিত ডেভেলপারদের সম্মিলিত প্রচেষ্টায় তৈরি:
 
-<table>
-  <tr>
-    <td align="center">
-     
-      <sub><b>Md. Sifat Hossan</b></sub><br />
-      <sub>Frontend Developer</sub>
-    </td>
-    <td align="center">
-    
-      <sub><b>Hemonta Debnath Tonmoy</b></sub><br />
-      <sub>Backend Developer & Database Designer</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-    
-      <sub><b>Md. Rifat Hasan</b></sub><br />
-      <sub>Content Writer </sub>
-    </td>
-    <td align="center">
+- **Md. Sifat Hossan** — Frontend Developer  
+- **Hemonta Debnath Tonmoy** — Backend Developer & Database Designer  
+- **Md. Rifat Hasan** — Content Writer  
+- **MD Sabbir Ahmad** — UI/UX Designer  
+- **Md Imran Hossain** — QA Tester  
+- **Md Mahim Hossen** — Content Writer  
+- **Md Shams al Siam** — Documentation  
+- **Md. Saidur Rahman** — Full Stack Developer
 
-      <sub><b>MD Sabbir Ahmad</b></sub><br />
-      <sub>UI/UX Designer</sub>
-    </td>
-    <td align="center">
-      <sub><b>Md Imran Hossain</b></sub><br />
-      <sub>QA Tester</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <sub><b>Md Mahim Hossen</b></sub><br />
-      <sub>Content Writer</sub>
-    </td>
-    <td align="center">
-      <sub><b>Md Shams al Siam</b></sub><br />
-      <sub>Documentation</sub>
-    </td>
-        <td align="center">
-        <sub><b>Md. Saidur Rahman</b></sub>
-      </a><br />
-      <sub>Full Stack Developer</sub>
-    </td>
-    <td></td>
-  </tr>
-</table>
 
 ---
 
